@@ -1,4 +1,5 @@
 using System;
+using ReceiveMessages;
 using SendMessages;
 using Xunit;
 
@@ -23,5 +24,12 @@ namespace TestSend
             Assert.Equal("hello rabbit", sender.Act("hello rabbit"));
         }
         
+        [Fact]
+        public void TestReceiver()
+        {
+            var consumer = new Receive();
+           consumer.Act();
+        }
+
     }
 }
